@@ -6,7 +6,7 @@
 html, body {
     overflow: hidden;
 
-    font-size: clamp(16px, 2.5vw, 24px);
+    font-size: 16px;
 
     font-family: "Figtree", sans-serif;
     font-optical-sizing: auto;
@@ -52,6 +52,7 @@ html, body {
     margin: 1rem;
 
     color: white;
+    font-size: clamp(1rem, 2.5vw, 2rem);
 }
 
 hgroup h1 {
@@ -62,17 +63,12 @@ hgroup p {
     margin-top: 0;
     color: #a0a0a0;
 }
-
-.emoji {
-    font-size: 2rem;
-}
-
 .code {
-    line-height: 0.5rem;
+    line-height: clamp(0.5rem, 1.5vw, 0.9rem);
 }
 
 .type {
-    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 1.5vw, 0.9rem);
     font-family: monospace;
     color: #0000;
     background:

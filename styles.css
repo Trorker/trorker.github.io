@@ -6,7 +6,7 @@
 html, body {
     overflow: hidden;
 
-    font-size: clamp(10px, 2.5vw, 24px);
+    font-size: clamp(16px, 2.5vw, 36px);
 
     font-family: "Figtree", sans-serif;
     font-optical-sizing: auto;
@@ -52,6 +52,19 @@ html, body {
     margin: 1rem;
 
     color: white;
+}
+
+hgroup h1 {
+    margin-bottom: 0;
+}
+
+hgroup p {
+    margin-top: 0;
+    color: #a0a0a0;
+}
+
+.emoji {
+    font-size: 2rem;
 }
 
 .code {

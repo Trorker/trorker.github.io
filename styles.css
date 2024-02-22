@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+
+/* <uniquifier>: Use a uniquifier for the class name */
+/* <weight>: Use a value from 300 to 900 */
+
+body {
+    overflow: hidden;
+
+    font-size: clamp(4px, 2vw, 24px);
+
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.bg {
+    background: url("background.jpg") no-repeat center fixed;
+    background-image:
+        linear-gradient(90deg, rgb(0 0 0 / 100%), rgb(0 0 0 / 50%)),
+        url(background.jpg);
+    background-size: cover;
+    /*background-blend-mode: saturation;*/
+
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    padding: 2rem;
+    margin: 2rem;
+
+    color: white;
+}
+
+.code {
+    line-height: 0.7rem;
+}
+
+.type {
+    font-size: 0.7rem;
+    font-family: monospace;
+    color: #0000;
+    background:
+        linear-gradient(-90deg, green 2px, #0000 0) 2px 0,
+        linear-gradient(grey 0 0) 0 0;
+    background-size: calc(var(--n)*1ch) 200%;
+    -webkit-background-clip: padding-box, text;
+    background-clip: padding-box, text;
+    background-repeat: no-repeat;
+    animation:
+        blink-caret .7s infinite steps(1),
+        typing calc(var(--n)*.1s) steps(var(--n)) forwards;
+}
+
+@keyframes typing {
+    from {
+        background-size: 0 200%
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        background-position: 0 -100%, 0 0
+    }
+}

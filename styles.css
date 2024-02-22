@@ -3,7 +3,7 @@
 /* <uniquifier>: Use a uniquifier for the class name */
 /* <weight>: Use a value from 300 to 900 */
 
-body {
+html, body {
     overflow: hidden;
 
     font-size: clamp(4px, 1.9vw, 24px);
@@ -47,8 +47,8 @@ body {
 }
 
 .content {
-    padding: 2rem;
-    margin: 2rem;
+    padding: 1rem;
+    margin: 1rem;
 
     color: white;
 }

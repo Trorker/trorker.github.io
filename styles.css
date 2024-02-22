@@ -43,7 +43,7 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .content {
@@ -83,4 +83,12 @@ body {
     50% {
         background-position: 0 -100%, 0 0
     }
+}
+
+.unsplash {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    color: darkgray;
+    font-size: 0.6rem;
 }

@@ -6,7 +6,7 @@
 html, body {
     overflow: hidden;
 
-    font-size: clamp(8px, 2.5vw, 24px);
+    font-size: clamp(10px, 2.5vw, 24px);
 
     font-family: "Figtree", sans-serif;
     font-optical-sizing: auto;
@@ -47,6 +47,7 @@ html, body {
 }
 
 .content {
+    width: 100%;
     padding: 1rem;
     margin: 1rem;
 
@@ -63,7 +64,7 @@ html, body {
     color: #0000;
     background:
         linear-gradient(-90deg, green 2px, #0000 0) 2px 0,
-        linear-gradient(grey 0 0) 0 0;
+        linear-gradient(#3c3c3c 0 0) 0 0;
     background-size: calc(var(--n)*1ch) 200%;
     -webkit-background-clip: padding-box, text;
     background-clip: padding-box, text;
@@ -89,6 +90,10 @@ html, body {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    color: darkgray;
+    color: lightgray;
     font-size: 0.6rem;
+}
+
+.unsplash a {
+    color: lightgray;
 }

@@ -64,7 +64,7 @@ html, body {
     color: #0000;
     background:
         linear-gradient(-90deg, green 2px, #0000 0) 2px 0,
-        linear-gradient(#3c3c3c 0 0) 0 0;
+        linear-gradient(#535353 0 0) 0 0;
     background-size: calc(var(--n)*1ch) 200%;
     -webkit-background-clip: padding-box, text;
     background-clip: padding-box, text;

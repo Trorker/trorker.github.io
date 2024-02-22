@@ -6,7 +6,7 @@
 body {
     overflow: hidden;
 
-    font-size: clamp(4px, 2vw, 24px);
+    font-size: clamp(4px, 1.9vw, 24px);
 
     font-family: "Figtree", sans-serif;
     font-optical-sizing: auto;

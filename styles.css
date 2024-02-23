@@ -83,7 +83,7 @@ hgroup p {
     background-repeat: no-repeat;
     animation:
         blink-caret .7s infinite steps(1),
-        typing calc(var(--n)*.03s) steps(var(--n)) forwards;
+        typing calc(var(--n)*.2s) steps(var(--n)) forwards;
 }
 
 @keyframes typing {

@@ -64,15 +64,15 @@ hgroup h1 {
 hgroup p {
     margin-top: 0;
     color: #a0a0a0;
-    color: red;
+    color: blue;
 }
 
 .code {
-    line-height: clamp(0.5em, 1.5vw, 0.9em);
+    line-height: clamp(0.5em, 0.5vw, 0.9em);
 }
 
 .type {
-    font-size: clamp(0.5em, 1.5vw, 0.9em);
+    font-size: clamp(0.5em, 0.5vw, 0.9em);
     font-family: monospace;
     color: #0000;
     background:

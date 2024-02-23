@@ -67,10 +67,11 @@ hgroup p {
 
 .code {
     line-height: clamp(0.5em, 1.5vw, 0.6em);
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 .type {
+    white-space: nowrap;
     font-size: clamp(0.5em, 1.5vw, 0.6em);
     font-family: monospace;
     color: #0000;

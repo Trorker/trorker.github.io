@@ -3,7 +3,8 @@
 /* <uniquifier>: Use a uniquifier for the class name */
 /* <weight>: Use a value from 300 to 900 */
 
-html, body {
+html,
+body {
     overflow: hidden;
 
     font-size: 16px;
@@ -33,7 +34,6 @@ html, body {
     background: url("background.jpg") no-repeat center fixed;
     background-image:
         linear-gradient(90deg, rgb(0 0 0 / 100%), rgb(0 0 0 / 50%)),
-        /* linear-gradient(0deg, rgb(0 0 0 / 10%), rgb(0 0 0 / 0%)), */
         url(background.jpg);
     background-size: cover;
 
@@ -57,12 +57,15 @@ html, body {
 
 hgroup h1 {
     margin-bottom: 0;
+    text-shadow: 2px 2px 4px green,
+        -2px -2px 4px green;
 }
 
 hgroup p {
     margin-top: 0;
     color: #a0a0a0;
 }
+
 .code {
     line-height: clamp(0.5rem, 1.5vw, 0.9rem);
 }

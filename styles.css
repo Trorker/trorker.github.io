@@ -67,11 +67,11 @@ hgroup p {
 }
 
 .code {
-    line-height: clamp(0.3rem, 1.5vw, 0.9rem);
+    line-height: clamp(0.2rem, 1.4vw, 0.9rem);
 }
 
 .type {
-    font-size: clamp(0.3rem, 1.5vw, 0.9rem);
+    font-size: clamp(0.2rem, 1.4vw, 0.9rem);
     font-family: monospace;
     color: #0000;
     background:

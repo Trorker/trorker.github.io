@@ -38,6 +38,8 @@ body {
 
 .content {
     padding: 2rem;
+    padding-top: 5rem;
+
     color: white;
     font-size: clamp(1rem, 2.5vw, 2rem);
 
@@ -65,6 +67,7 @@ hgroup p {
 
 .code {
     line-height: clamp(0.5em, 1.5vw, 0.6em);
+    overflow-y: hidden;
 }
 
 .type {
@@ -80,7 +83,7 @@ hgroup p {
     background-repeat: no-repeat;
     animation:
         blink-caret .7s infinite steps(1),
-        typing calc(var(--n)*.2s) steps(var(--n)) forwards;
+        typing calc(var(--n)*.03s) steps(var(--n)) forwards;
 }
 
 @keyframes typing {

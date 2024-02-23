@@ -38,7 +38,7 @@ body {
 
 .content {
     padding: 2rem;
-    padding-top: 15rem;
+    padding-top: clamp(1rem, 2.5vw, 15rem);
 
     color: white;
     font-size: clamp(1rem, 2.5vw, 2rem);

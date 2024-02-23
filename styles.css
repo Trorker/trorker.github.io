@@ -34,13 +34,6 @@ body {
     background: url("background.jpg") no-repeat center fixed;
     background-image: linear-gradient(90deg, rgb(0 0 0 / 100%), rgb(0 0 0 / 50%)), url(background.jpg);
     background-size: cover;
-
-    height: 100vh;
-
-    display: flex;
-    align-items: stretch;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .content {
@@ -48,7 +41,12 @@ body {
     color: white;
     font-size: clamp(1rem, 2.5vw, 2rem);
 
-    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -100,17 +98,24 @@ hgroup p {
 footer {
     width: 100%;
     color: lightgray;
-    font-size: 0.7rem;
+    font-size: clamp(0.45rem, 2.5vw, 0.8rem);
 
+    position: fixed;
+    bottom: 0;
     
 
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    /*flex-wrap: wrap;*/
 }
 
 footer span {
     padding: 1rem;
+}
+
+footer .unsplash {
+    text-align: right;
 }
 
 footer a {

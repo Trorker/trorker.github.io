@@ -67,7 +67,7 @@ hgroup p {
 
 .code {
     line-height: clamp(0.5em, 1.5vw, 0.6em);
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .type {

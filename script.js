@@ -164,7 +164,7 @@ function Typewriter(element, speed, options) {
                         let endIndex = text.indexOf('>', index);
                         let tag = text.substring(index, endIndex + 1)
 
-                        if (text.charAt(index+1).indexOf("/")) {
+                        if (tag.charCodeAt(1) != 47) {
                             console.log("find open tag: ", tag);
                         } else {
                             console.log("find clouse tag: ", tag);

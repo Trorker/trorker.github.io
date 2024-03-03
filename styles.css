@@ -72,14 +72,15 @@ hgroup p {
 .code {
     line-height: clamp(0.5em, 1.5vw, 0.6em);
     overflow-y: hidden;
+    height: 100%
 }
 
 .type {
     white-space: nowrap;
     font-size: clamp(0.5em, 1.5vw, 0.6em);
     font-family: monospace;
-    color: #0000;
-    background:
+    color: #535353;
+    /*background:
         linear-gradient(-90deg, green 2px, #0000 0) 2px 0,
         linear-gradient(#535353 0 0) 0 0;
     background-size: calc(var(--n)*1ch) 200%;
@@ -88,7 +89,7 @@ hgroup p {
     background-repeat: no-repeat;
     animation:
         blink-caret .7s infinite steps(1),
-        typing calc(var(--n)*.2s) steps(var(--n)) forwards;
+        typing calc(var(--n)*.2s) steps(var(--n)) forwards;*/
 }
 
 @keyframes typing {

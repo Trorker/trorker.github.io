@@ -111,13 +111,24 @@ let newCod = `
 </html>
 `;
 
-let test = "<b>Strong</b><i>Strong</i>";
+let test = "<b class='ah'>Strong</b><i>Strong</i>";
 
 
 function Typewriter(element, speed, options) {
     this.element = element;
     this.speed = speed || 100; // Velocità predefinita di scrittura (in millisecondi)
     this.options = options || {}; // Altre opzioni, come ad esempio il testo da scrivere
+
+    // Opzioni predefinite
+    /*const defaults = {
+        speed: 100, // Velocità di scrittura in millisecondi per carattere
+        delay: 0, // Ritardo iniziale in millisecondi
+        loop: false, // Se true, il testo ricomincia dall'inizio dopo la fine
+        tags: true, // Se true, riconosce i tag HTML
+    };
+
+    // Opzioni merge
+    options = Object.assign({}, defaults, options);*/
 
     this.init = function () {
         if (!this.element) return; // Verifica che sia stato fornito un elemento valido
@@ -142,19 +153,6 @@ function Typewriter(element, speed, options) {
 
                 console.log(text.charAt(index) + ": ", text.charCodeAt(index));
 
-                // Se il carattere è '<', considera il testo successivo come un tag HTML completo
-                /*var char = text.charAt(index);
-                if (char === '<') {
-                    var endIndex = text.indexOf('>', index);
-                    if (endIndex !== -1) {
-                        app.innerHTML += text.substring(index, endIndex + 1);
-                        index = endIndex + 1;
-                    }
-                } else {
-                    app.innerHTML += char;
-                    index++;
-                }*/
-
                 switch (text.charCodeAt(index)) {
                     case 10:
                         self.element.innerHTML += "<br>"
@@ -172,7 +170,7 @@ function Typewriter(element, speed, options) {
                         console.log(tag);
 
                         if (endIndex !== -1) {
-                            self.element.innerHTML += tag;
+                            self.element.innerHTML += tag
                             index = endIndex;
                         }
                         break;
@@ -209,7 +207,7 @@ function Typewriter(element, speed, options) {
 }
 
 // Esempio di utilizzo
-var typewriter = new Typewriter(app, 50, { text: test }); //
+var typewriter = new Typewriter(app, 1000, { text: test }); //
 typewriter.init();
 
 

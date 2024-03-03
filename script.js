@@ -60,7 +60,7 @@ code = 'Normal<b class="code">Bold<i id="codeType" class="type">Bold-Italick</i>
 var codeType = document.getElementById('codeType'); //verificare come vanno i tag dentro i tag
 // Esempio di utilizzo
 window.typewriter = new Typewriter(codeType, {
-    text: code,
+    //text: code,
     speed: 50,
     speedBlinkCursor: 500,
     tags: true,
@@ -69,8 +69,13 @@ window.typewriter = new Typewriter(codeType, {
 //typewriter.init();
 
 window.typewriter.typeString('0000000000000000')
+    .pauseFor(2500)
     .typeString('1111111111111111')
-//.deleteAll();
+    .pauseFor(2500)
+    .deleteAll()
+    .pauseFor(2500)
+    .typeString('33333333333333333')
+    .deleteChars(7)
 
 //.start()
 /*.pauseFor(2500)
@@ -100,10 +105,10 @@ function Typewriter(element, options) {
     options = Object.assign({}, defaults, options);
 
     this.init = function (argText) {
-        /*return new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             if (!this.element) {
                 reject(new Error('Element not provided'));
-            }*/
+            }
             //if (!this.element) return; // Verifica che sia stato fornito un elemento valido
 
             var text = this.options.text || argText; // Ottiene il testo da scrivere, se fornito
@@ -119,7 +124,7 @@ function Typewriter(element, options) {
             this.element.parentNode.insertBefore(cursor, this.element.nextSibling);
 
             // Cancella il contenuto dell'elemento
-            this.element.innerHTML = '';
+            //this.element.innerHTML = '';
 
             // Funzione ricorsiva per scrivere il testo lettera per lettera
             function typeWriter() {
@@ -177,7 +182,7 @@ function Typewriter(element, options) {
                     // Rimuove il cursore quando il testo è completamente scritto
                     cursor.parentNode.removeChild(cursor);
 
-                    //resolve(this); // Risolve la promessa una volta completata la scrittura del testo
+                    resolve(this); // Risolve la promessa una volta completata la scrittura del testo
 
                 }
             }
@@ -193,7 +198,7 @@ function Typewriter(element, options) {
 
             // Avvia la scrittura del testo
             typeWriter();
-        //});
+        });
     }
 
     /*
@@ -268,7 +273,7 @@ function Typewriter(element, options) {
     this.processEventQueue = function () {
         return new Promise((resolve) => {
             let self = this;
-            function processNextEvent() {
+            async function processNextEvent() {
                 if (self.eventQueue.length > 0) {
                     let event = self.eventQueue.shift();
                     let eventName = event.name;
@@ -277,9 +282,11 @@ function Typewriter(element, options) {
                     switch (eventName) {
                         case 'TYPE_STRING':
                             console.log(eventArgs.newText);
-                            this.init(eventArgs.newText);
+                            await self.init(eventArgs.newText);
+                            processNextEvent();
                             break;
                         case 'PAUSE_FOR':
+                            console.log('PAUSE_FOR', eventArgs.ms);
                             setTimeout(processNextEvent, eventArgs.ms);
                             break;
                         case 'DELETE_ALL':

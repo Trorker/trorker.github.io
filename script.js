@@ -55,11 +55,11 @@ let code = `
 </html>
 `;
 
-code = '<b class="code">Bold<i id="codeType" class="type">Italick</i></b>';
+code = 'Normal<b class="code">Bold<i id="codeType" class="type">Bold-Italick</i></b>';
 
 var codeType = document.getElementById('codeType'); //verificare come vanno i tag dentro i tag
 // Esempio di utilizzo
-var typewriter = new Typewriter(codeType, {
+window.typewriter = new Typewriter(codeType, {
     text: code,
     speed: 50,
     speedBlinkCursor: 500,
@@ -68,7 +68,7 @@ var typewriter = new Typewriter(codeType, {
 });
 //typewriter.init();
 
-typewriter.typeString('0000000000000000')
+window.typewriter.typeString('0000000000000000')
     .typeString('1111111111111111')
 //.deleteAll();
 
@@ -99,14 +99,14 @@ function Typewriter(element, options) {
     // Opzioni merge
     options = Object.assign({}, defaults, options);
 
-    this.init = function () {
-        return new Promise((resolve, reject) => {
+    this.init = function (argText) {
+        /*return new Promise((resolve, reject) => {
             if (!this.element) {
                 reject(new Error('Element not provided'));
-            }
+            }*/
             //if (!this.element) return; // Verifica che sia stato fornito un elemento valido
 
-            var text = this.options.text || ''; // Ottiene il testo da scrivere, se fornito
+            var text = this.options.text || argText; // Ottiene il testo da scrivere, se fornito
             var index = 0;
             var self = this;
             let writeInTag = false;
@@ -177,7 +177,7 @@ function Typewriter(element, options) {
                     // Rimuove il cursore quando il testo è completamente scritto
                     cursor.parentNode.removeChild(cursor);
 
-                    resolve(this); // Risolve la promessa una volta completata la scrittura del testo
+                    //resolve(this); // Risolve la promessa una volta completata la scrittura del testo
 
                 }
             }
@@ -193,66 +193,116 @@ function Typewriter(element, options) {
 
             // Avvia la scrittura del testo
             typeWriter();
-        });
-    }
-
-    this.addEventToQueue = function(eventName, eventArgs) {
-        // Crea un oggetto che rappresenta l'evento da aggiungere alla coda
-        var eventObject = {
-            name: eventName,
-            args: eventArgs
-        };
-
-        // Aggiunge l'oggetto evento alla coda degli eventi
-        this.eventQueue.push(eventObject);
-    }
-
-    this.eventQueue = []; // Inizializza la coda degli eventi
-
-    this.typeString = function (newText) {
-        //va gestito con la liste dai eventi.. che prima vanno salvati tutti eventi e dopo eseguiti 
-        console.log("typeString", newText);
-        this.options.text = newText;
-        let ms = 500;
-        this.init();
-        this.addEventToQueue("EVENT_NAMES.PAUSE_FOR", { ms });
-        //return new Promise((resolve) => setTimeout(resolve(this), 500));
-        console.log("this.eventQueue", this.eventQueue);
-        return this;
-    }
-
-    this.pauseFor = function (ms = 500) {
-        console.log("pauseFor");
-        this.addEventToQueue("EVENT_NAMES.PAUSE_FOR", { ms });
-    
-        return this;
+        //});
     }
 
     /*
-    this.start = function () {
-        this.init();
-        return this;
-    }
+        var i = "TYPE_CHARACTER",
+            s = "REMOVE_CHARACTER",
+            u = "REMOVE_ALL",
+            l = "REMOVE_LAST_VISIBLE_NODE",
+            c = "PAUSE_FOR",
+            p = "CALL_FUNCTION",
+            d = "ADD_HTML_TAG_ELEMENT",
+            f = "CHANGE_DELETE_SPEED",
+            v = "CHANGE_DELAY",
+            h = "CHANGE_CURSOR",
+            m = "PASTE_STRING",
+            y = "HTML_TAG";
+
+
+            E.addEventToQueue("ADD_HTML_TAG_ELEMENT", {
+                                    node: a,
+                                    parentNode: t
+                                }), n ? E.pasteString(i, a) : E.typeString(i, a)) : a.textContent && (n ? E.pasteString(a.textContent, t) : E.typeString(a.textContent, t))
+                                        case "ADD_HTML_TAG_ELEMENT":
+                                        var x = g.eventArgs,
+                                            P = x.node,
+                                            j = x.parentNode;
+                                        j ? j.appendChild(P) : E.state.elements.wrapper.appendChild(P), E.state.visibleNodes = [].concat(b(E.state.visibleNodes), [{
+                                            type: y,
+                                            node: P,
+                                            parentNode: j || E.state.elements.wrapper
+                                        }]);
+                                        break;
     
-    this.delay = function (ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                                */
+
+    this.eventQueue = []; // Lista degli eventi
+
+    this.typeString = function (newText) {
+        this.addEventToQueue('TYPE_STRING', { newText });
+        return this;
+        //return new Promise((resolve) => setTimeout(resolve(this), 500));
     }
 
-    this.pauseFor = function (duration = 500) {
-        console.log("pauseFor");
-        //await this.delay(duration);
+    this.pauseFor = function (ms = 500) {
+        this.addEventToQueue('PAUSE_FOR', { ms });
         return this;
-    }*/
+    }
 
     this.deleteAll = function () {
-        this.element.innerHTML = '';
+        this.addEventToQueue('DELETE_ALL');
         return this;
     }
 
     this.deleteChars = function (numChars) {
-        var currentText = this.element.innerHTML;
-        this.element.innerHTML = currentText.slice(0, -numChars);
+        this.addEventToQueue('DELETE_CHARS', { numChars });
         return this;
+    }
+
+    this.addEventToQueue = function (eventName, eventArgs) {
+        this.eventQueue.push({ name: eventName, args: eventArgs });
+    }
+
+    this.processEventQueue = function () {
+        return new Promise((resolve) => {
+            let self = this;
+            function processNextEvent() {
+                if (self.eventQueue.length > 0) {
+                    let event = self.eventQueue.shift();
+                    let eventName = event.name;
+                    let eventArgs = event.args || {};
+
+                    switch (eventName) {
+                        case 'TYPE_STRING':
+                            console.log(eventArgs.newText);
+                            this.init(eventArgs.newText);
+                            break;
+                        case 'PAUSE_FOR':
+                            setTimeout(processNextEvent, eventArgs.ms);
+                            break;
+                        case 'DELETE_ALL':
+                            self.element.innerHTML = '';
+                            processNextEvent();
+                            break;
+                        case 'DELETE_CHARS':
+                            var currentText = self.element.innerHTML;
+                            self.element.innerHTML = currentText.slice(0, -eventArgs.numChars);
+                            processNextEvent();
+                            break;
+                        // Aggiungi altri casi per gli altri tipi di eventi
+                        default:
+                            console.error('Unknown event:', eventName);
+                            processNextEvent();
+                            break;
+                    }
+                } else {
+                    resolve();
+                }
+            }
+            processNextEvent();
+        });
     }
 }
 

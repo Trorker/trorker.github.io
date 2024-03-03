@@ -1,60 +1,4 @@
 let code = `
-                &lt;!DOCTYPE&nbsp;HTML&gt;<br>
-                &lt;html&nbsp;lang="it"&gt;<br>
-                <br>
-                &lt;head&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;name="viewport"&nbsp;content="width=device-width,&nbsp;initial-scale=1"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Work&nbsp;in&nbsp;Progress&lt;/title&gt;<br>
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;rel="icon"&nbsp;href="🚧"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;rel="stylesheet"&nbsp;href="styles.css"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;rel="preload"&nbsp;href="/background.jpg"&nbsp;as="image"&nbsp;/&gt;<br>
-                &lt;/head&gt;<br>
-                <br>
-                &lt;body&nbsp;class="bg&nbsp;noselect"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;section&nbsp;class="content"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hgroup&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;The&nbsp;Site&nbsp;is&nbsp;Under&nbsp;Construction&lt;/h1&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Stay&nbsp;tuned&nbsp;for&nbsp;updates&nbsp;and&nbsp;come&nbsp;back&nbsp;soon&nbsp;to&nbsp;see&nbsp;the&nbsp;magic&nbsp;unfold!&lt;/p&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/hgroup&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="code"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class="type"&nbsp;style="--n:239"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!DOCTYPE&nbsp;html&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;html&nbsp;lang="en"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;charset="UTF-8"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;name="viewport"&nbsp;content="width=device-width,&nbsp;initial-scale=1.0"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Work&nbsp;in&nbsp;Progress...&lt;/title&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Work&nbsp;in&nbsp;Progress&lt;/h1&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/html&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;footer&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class="credits"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Made&nbsp;by&nbsp;&lt;a&nbsp;href="https://github.com/Trorker"&nbsp;class="secondary"&gt;Ruslan&nbsp;Dzyuba&lt;/a&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright&nbsp;©&nbsp;2024&nbsp;-&nbsp;All&nbsp;rights&nbsp;reserved<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class="unsplash"&gt;Photo&nbsp;by&nbsp;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href="https://unsplash.com/it/@dianamia?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"&gt;C&nbsp;Dustin&lt;/a&gt;&nbsp;from&nbsp;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href="https://unsplash.com/it/foto/un-gruppo-di-edifici-alti-sotto-un-cielo-blu-nuvoloso-91AQt9p4Mo8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"&gt;Unsplash&lt;/a&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/footer&gt;<br>
-                &lt;/body&gt;<br>
-                <br>
-                &lt;/html&gt;
-`;
-
-
-var app = document.getElementById('codeType');
-let newCod = `
 <!DOCTYPE HTML>
 <html lang="it">
 
@@ -111,24 +55,33 @@ let newCod = `
 </html>
 `;
 
-let test = "<b class='ah'>Strong</b><i>Strong</i>";
+var codeType = document.getElementById('codeType');
+// Esempio di utilizzo
+var typewriter = new Typewriter(codeType, {
+    text: code,
+    speed: 50,
+    speedBlinkCursor: 500,
+    tags: false,
+    devMode: true,
+});
+typewriter.init();
 
-
-function Typewriter(element, speed, options) {
+function Typewriter(element, options) {
     this.element = element;
-    this.speed = speed || 100; // Velocità predefinita di scrittura (in millisecondi)
     this.options = options || {}; // Altre opzioni, come ad esempio il testo da scrivere
 
     // Opzioni predefinite
-    /*const defaults = {
+    const defaults = {
         speed: 100, // Velocità di scrittura in millisecondi per carattere
+        speedBlinkCursor: 500, // Velocità di lampeggiare del cursore in millisecondi
         delay: 0, // Ritardo iniziale in millisecondi
         loop: false, // Se true, il testo ricomincia dall'inizio dopo la fine
         tags: true, // Se true, riconosce i tag HTML
+        devMode: false, // Impostazione predefinita per la modalità di sviluppo
     };
 
     // Opzioni merge
-    options = Object.assign({}, defaults, options);*/
+    options = Object.assign({}, defaults, options);
 
     this.init = function () {
         if (!this.element) return; // Verifica che sia stato fornito un elemento valido
@@ -136,6 +89,7 @@ function Typewriter(element, speed, options) {
         var text = this.options.text || ''; // Ottiene il testo da scrivere, se fornito
         var index = 0;
         var self = this;
+        let writeInTag = false;
 
         var cursor = document.createElement('span'); // Creazione dell'elemento per il cursore
         cursor.className = 'cursor';
@@ -151,7 +105,9 @@ function Typewriter(element, speed, options) {
         function typeWriter() {
             if (index < text.length) {
 
-                console.log(text.charAt(index) + ": ", text.charCodeAt(index));
+                if (options.devMode) {
+                    console.log(text.charAt(index) + ": ", text.charCodeAt(index));
+                }
 
                 switch (text.charCodeAt(index)) {
                     case 10:
@@ -161,31 +117,41 @@ function Typewriter(element, speed, options) {
                         self.element.innerHTML += "&nbsp;"
                         break;
                     case 60:
-                        let endIndex = text.indexOf('>', index);
-                        let tag = text.substring(index, endIndex + 1)
+                        if (options.tags) {
+                            let endIndex = text.indexOf('>', index);
+                            let tag = text.substring(index, endIndex + 1)
 
-                        if (tag.charCodeAt(1) != 47) {
-                            console.log("find open tag: ", tag);
+                            writeInTag = (tag.charCodeAt(1) != 47);
+
+                            if (options.devMode) {
+                                console.log("find tag: ", tag);
+                            }
+
+                            if (endIndex !== -1) {
+                                self.element.innerHTML += tag;
+                                index = endIndex;
+                            }
+
+                            console.log(self.element.lastElementChild);
                         } else {
-                            console.log("find clouse tag: ", tag);
-                        }
-
-                        if (endIndex !== -1) {
-                            self.element.innerHTML += tag;
-                            index = endIndex;
+                            self.element.innerHTML += text.charAt(index);
                         }
                         break;
 
                     default:
-                        self.element.innerHTML += text.charAt(index);
+                        if (writeInTag) {
+                            self.element.lastElementChild.innerHTML += text.charAt(index);
+                        } else {
+                            self.element.innerHTML += text.charAt(index);
+                        }
                         break;
                 }
                 index++;
 
                 // Aggiorna la posizione del cursore
-                cursor.style.left = (app.offsetWidth + 5) + 'px';
+                cursor.style.left = (self.element.offsetWidth + 5) + 'px';
 
-                setTimeout(typeWriter, self.speed);
+                setTimeout(typeWriter, options.speed);
             }
             else {
                 // Rimuove il cursore quando il testo è completamente scritto
@@ -207,36 +173,6 @@ function Typewriter(element, speed, options) {
     }
 }
 
-// Esempio di utilizzo
-var typewriter = new Typewriter(app, 1000, { text: test }); //
-typewriter.init();
-
-
-/*var i = 0;
-var speed = 50;
-
-typeWriter();
-
-function typeWriter() {
-    if (i < newCod.length) {
-        console.log(newCod.charAt(i) + ": ", newCod.charCodeAt(i));
-        console.log();
-        switch (newCod.charCodeAt(i)) {
-            case 10:
-                app.innerHTML += "<br>"
-                break;
-            case 32:
-                app.innerHTML += "&nbsp;"
-                break;
-
-            default:
-                app.innerHTML += newCod.charAt(i);
-                break;
-        }
-        i++;
-        setTimeout(typeWriter, speed);
-    }
-}*/
 
 /*
 var typewriter = new Typewriter(app, {

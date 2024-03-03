@@ -111,18 +111,27 @@ let newCod = `
 </html>
 `;
 
+let test = "<b>Strong</b><i>Strong</i>";
+
 
 function Typewriter(element, speed, options) {
     this.element = element;
     this.speed = speed || 100; // Velocità predefinita di scrittura (in millisecondi)
     this.options = options || {}; // Altre opzioni, come ad esempio il testo da scrivere
 
-    this.init = function() {
+    this.init = function () {
         if (!this.element) return; // Verifica che sia stato fornito un elemento valido
 
         var text = this.options.text || ''; // Ottiene il testo da scrivere, se fornito
         var index = 0;
         var self = this;
+
+        var cursor = document.createElement('span'); // Creazione dell'elemento per il cursore
+        cursor.className = 'cursor';
+        cursor.textContent = '|'; // Testo del cursore
+
+        // Inserisce il cursore nel documento
+        this.element.parentNode.insertBefore(cursor, this.element.nextSibling);
 
         // Cancella il contenuto dell'elemento
         this.element.innerHTML = '';
@@ -132,8 +141,20 @@ function Typewriter(element, speed, options) {
             if (index < text.length) {
 
                 console.log(text.charAt(index) + ": ", text.charCodeAt(index));
-                console.log();
-                
+
+                // Se il carattere è '<', considera il testo successivo come un tag HTML completo
+                /*var char = text.charAt(index);
+                if (char === '<') {
+                    var endIndex = text.indexOf('>', index);
+                    if (endIndex !== -1) {
+                        app.innerHTML += text.substring(index, endIndex + 1);
+                        index = endIndex + 1;
+                    }
+                } else {
+                    app.innerHTML += char;
+                    index++;
+                }*/
+
                 switch (text.charCodeAt(index)) {
                     case 10:
                         self.element.innerHTML += "<br>"
@@ -141,15 +162,46 @@ function Typewriter(element, speed, options) {
                     case 32:
                         self.element.innerHTML += "&nbsp;"
                         break;
-        
+                    case 60:
+                        console.log("find tag");
+
+                        let endIndex = text.indexOf('>', index);
+                        let tag = text.substring(index, endIndex + 1)
+
+                        console.log(endIndex);
+                        console.log(tag);
+
+                        if (endIndex !== -1) {
+                            self.element.innerHTML += tag;
+                            index = endIndex;
+                        }
+                        break;
+
                     default:
                         self.element.innerHTML += text.charAt(index);
                         break;
                 }
                 index++;
+
+                // Aggiorna la posizione del cursore
+                cursor.style.left = (app.offsetWidth + 5) + 'px';
+
                 setTimeout(typeWriter, self.speed);
             }
+            else {
+                // Rimuove il cursore quando il testo è completamente scritto
+                cursor.parentNode.removeChild(cursor);
+            }
         }
+
+        // Funzione per far lampeggiare il cursore
+        function blinkCursor() {
+            cursor.style.visibility = (cursor.style.visibility === 'visible') ? 'hidden' : 'visible';
+            setTimeout(blinkCursor, 500); // Intervalli di lampeggio (500 ms)
+        }
+
+        // Avvia il lampeggio del cursore
+        blinkCursor();
 
         // Avvia la scrittura del testo
         typeWriter();
@@ -157,7 +209,7 @@ function Typewriter(element, speed, options) {
 }
 
 // Esempio di utilizzo
-var typewriter = new Typewriter(app, 50, { text: newCod });
+var typewriter = new Typewriter(app, 50, { text: test }); //
 typewriter.init();
 
 

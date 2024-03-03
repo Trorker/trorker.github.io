@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // Definizione della lista degli eventi
-let eventList = [
-  "Evento 1",
-  "Evento 2",
-  "Evento 3"
-];
+        let eventList = [
+            "Evento 1",
+            "Evento 2",
+            "Evento 3"
+        ];
 
-// Funzione per eseguire un singolo evento
-function runEvent(event) {
-  return new Promise((resolve, reject) => {
-    console.log("In esecuzione:", event);
-    
-    // Simulazione della durata dell'evento (ad esempio, 2 secondi)
-    setTimeout(() => {
-      console.log("Fine di:", event);
-      resolve(); // Risolve la promessa quando l'evento è completato
-    }, 2000);
-  });
-}
+        // Funzione per eseguire un singolo evento
+        function runEvent(event) {
+            return new Promise((resolve, reject) => {
+                console.log("In esecuzione:", event);
 
-// Funzione per eseguire tutti gli eventi uno alla volta
-function runEvents() {
-  if (eventList.length > 0) {
-    let currentEvent = eventList.shift(); // Rimuove il primo evento dalla lista
-    runEvent(currentEvent)
-      .then(runEvents) // Chiama ricorsivamente la funzione per eseguire il prossimo evento
-      .catch(error => console.error("Errore durante l'esecuzione dell'evento:", error));
-  } else {
-    console.log("Nessun altro evento da eseguire.");
-  }
-}
+                // Simulazione della durata dell'evento (ad esempio, 2 secondi)
+                setTimeout(() => {
+                    console.log("Fine di:", event);
+                    resolve(); // Risolve la promessa quando l'evento è completato
+                }, 2000);
+            });
+        }
 
-// Chiamata della funzione per eseguire gli eventi
-runEvents();
+        // Funzione per eseguire tutti gli eventi uno alla volta
+        function runEvents() {
+            if (eventList.length > 0) {
+                let currentEvent = eventList.shift(); // Rimuove il primo evento dalla lista
+                runEvent(currentEvent)
+                    .then(runEvents) // Chiama ricorsivamente la funzione per eseguire il prossimo evento
+                    .catch(error => console.error("Errore durante l'esecuzione dell'evento:", error));
+            } else {
+                console.log("Nessun altro evento da eseguire.");
+            }
+        }
+
+        // Chiamata della funzione per eseguire gli eventi
+        runEvents();
 
     </script>
 </body>
+
 </html>

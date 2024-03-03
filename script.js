@@ -161,16 +161,17 @@ function Typewriter(element, speed, options) {
                         self.element.innerHTML += "&nbsp;"
                         break;
                     case 60:
-                        console.log("find tag");
-
                         let endIndex = text.indexOf('>', index);
                         let tag = text.substring(index, endIndex + 1)
 
-                        console.log(endIndex);
-                        console.log(tag);
+                        if (text.charAt(index+1).indexOf("/")) {
+                            console.log("find open tag: ", tag);
+                        } else {
+                            console.log("find clouse tag: ", tag);
+                        }
 
                         if (endIndex !== -1) {
-                            self.element.innerHTML += tag
+                            self.element.innerHTML += tag;
                             index = endIndex;
                         }
                         break;

@@ -59,7 +59,7 @@ code = 'Normal<b class="code">Bold<i id="codeType" class="type">Bold-Italick</i>
 
 var codeType = document.getElementById('codeType'); //verificare come vanno i tag dentro i tag
 // Esempio di utilizzo
-window.typewriter = new Typewriter(codeType, {
+window.typewriter = new TypeWriter(codeType, {
     //text: code,
     speed: 50,
     speedBlinkCursor: 500,
@@ -68,13 +68,13 @@ window.typewriter = new Typewriter(codeType, {
 });
 //typewriter.init();
 
-window.typewriter.typeString('0000000000000000')
+window.typewriter.typeString('testo 1')
     .pauseFor(2500)
-    .typeString('1111111111111111')
+    .typeString('testo 2')
     .pauseFor(2500)
     .deleteAll()
     .pauseFor(2500)
-    .typeString('33333333333333333')
+    .typeString('testo 3')
     .deleteChars(7)
 
 //.start()
@@ -87,7 +87,7 @@ window.typewriter.typeString('0000000000000000')
 .pauseFor(2500)
 .start();*/
 
-function Typewriter(element, options) {
+function TypeWriter(element, options) {
     this.element = element;
     this.options = options || {}; // Altre opzioni, come ad esempio il testo da scrivere
 

@@ -57,6 +57,9 @@ body {
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
+
+    width: max(50vw, 1440px);
+    margin: 0 auto;
 }
 
 hgroup h1 {
